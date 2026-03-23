@@ -1,5 +1,5 @@
 {
-  "name": "ワンコ健康ナビ",
+  "name": "健康ナビ",
   "description": "犬の健康管理、食べ物安全チェック、病院検索、症状チェッカー、リアルタイム散歩共有ができる総合アプリ",
   "requestFramePermissions": ["geolocation"]
 }
