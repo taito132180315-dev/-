@@ -13,7 +13,7 @@ export default function FoodCheck() {
     setResult(null);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
       const prompt = `犬が「${query}」を食べても大丈夫ですか？
       以下のJSONフォーマットで回答してください。
       {
@@ -22,7 +22,7 @@ export default function FoodCheck() {
       }`;
 
       const response = await ai.models.generateContent({
-        model: 'gemini-3-flash-preview',
+        model: 'gemini-2.5-pro',
         contents: prompt,
         config: {
           responseMimeType: 'application/json',

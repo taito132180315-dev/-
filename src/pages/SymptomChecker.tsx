@@ -13,7 +13,7 @@ export default function SymptomChecker() {
     setResult(null);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY });
+      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_GEMINI_API_KEY });
       const prompt = `犬の症状「${symptom}」について、獣医師の視点で緊急度とアドバイスを判定してください。
       以下のJSONフォーマットで回答してください。
       {
@@ -22,7 +22,7 @@ export default function SymptomChecker() {
       }`;
 
       const response = await ai.models.generateContent({
-        model: 'gemini-3-flash-preview',
+        model: 'gemini-2.5-pro',
         contents: prompt,
         config: {
           responseMimeType: 'application/json',
